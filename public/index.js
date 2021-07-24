@@ -19,6 +19,7 @@ function populateTotal() {
   let total = transactions.reduce((total, t) => {
     return total + parseInt(t.value);
   }, 0);
+  
 
   let totalEl = document.querySelector("#total");
   totalEl.textContent = total;
@@ -136,6 +137,7 @@ function sendTransaction(isAdding) {
   })
   .catch(err => {
     // fetch failed, so save in indexed db
+    alert("The site is currently experiencing network connectivity issues.  While offline all transactions will be saved locally and posted once the network has been restored.");
     saveRecord(transaction);
 
     // clear form
