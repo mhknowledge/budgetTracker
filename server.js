@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
-  useFindandModify: false
+  useFindAndModify: false
 });
 
 // routes
